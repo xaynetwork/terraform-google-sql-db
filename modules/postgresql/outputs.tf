@@ -85,6 +85,7 @@ output "replicas_instance_self_links" {
 output "replicas_instance_server_ca_certs" {
   value       = [for r in google_sql_database_instance.replicas : r.server_ca_cert]
   description = "The CA certificates information used to connect to the replica instances via SSL"
+  sensitive   = true
 }
 
 output "replicas_instance_service_account_email_addresses" {
